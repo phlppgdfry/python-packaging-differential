@@ -22,7 +22,7 @@ This repository runs **15,455 inputs** through all three and **explains every di
 
 | Bug | Status |
 |---|---|
-| A marker with the value on the left (`"linux" == sys_platform`, `"3.8" < python_version`) raises `InvalidMarkerError`, although PEP 508 allows it | **Found here.** Reported in [python-poetry/poetry#11285](https://github.com/python-poetry/poetry/issues/11285), with a fix PR |
+| A marker with the value on the left (`"linux" == sys_platform`, `"3.8" < python_version`) raises `InvalidMarkerError`, although PEP 508 allows it | **Found here.** Reported in [python-poetry/poetry#11285](https://github.com/python-poetry/poetry/issues/11285), fix in [poetry-core#1006](https://github.com/python-poetry/poetry-core/pull/1006) |
 | Uppercase pre/post/dev tags are not lowercased, so `1.0RC1` sorts before `1.0a1` | Already reported: poetry#11235, fix in poetry-core#1000 |
 | `implementation_version` is compared as a string, so `>=`/`<` never match | Already open: poetry-core#1002 |
 | Ordered comparisons on string markers (`os_name >= "posix"`) never match | Same root cause as poetry-core#1002 |
