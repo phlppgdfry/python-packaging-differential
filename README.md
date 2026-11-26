@@ -12,7 +12,7 @@ This repository runs **15,455 inputs** through all three and **explains every di
 
 | | uv (`e3e7c1e`) | poetry-core 2.5.0 |
 |---|---|---|
-| Cases that agree with `packaging` 26.3 | 15,211 of 15,455 | 15,128 of 15,455 |
+| Cases that agree with `packaging` 26.4 | 15,211 of 15,455 | 15,128 of 15,455 |
 | Differences, explained | 244 in 9 categories | 327 in 11 categories |
 | Bugs | **none** | **4** (1 found here and reported, 3 already reported or open as a PR) |
 

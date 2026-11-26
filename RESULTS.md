@@ -1,6 +1,6 @@
 # Results
 
-Reference: `packaging` 26.3. uv @ e3e7c1e, poetry-core 2.5.0.
+Reference: `packaging` 26.4. uv @ e3e7c1e, poetry-core 2.5.0.
 
 15,455 cases: 3,080 version, 11,175 compare, 49 spec, 1,078 contains, 73 marker.
 
