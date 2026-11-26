@@ -1,0 +1,3662 @@
+{
+ "uv-u64": [
+  {
+   "input": {
+    "op": "version",
+    "s": "1.99999999999999999999"
+   },
+   "packaging": {
+    "ok": true,
+    "value": "1.99999999999999999999"
+   },
+   "uv": {
+    "ok": false,
+    "error": "expected number less than or equal to 18446744073709551614, but number found in \"99999999999999999999\" exceeds it"
+   }
+  },
+  {
+   "input": {
+    "op": "version",
+    "s": "18446744073709551616.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": "18446744073709551616.0"
+   },
+   "uv": {
+    "ok": false,
+    "error": "expected number less than or equal to 18446744073709551614, but number found in \"18446744073709551616\" exceeds it"
+   }
+  },
+  {
+   "input": {
+    "op": "version",
+    "s": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": "1.0.18446744073709551615"
+   },
+   "uv": {
+    "ok": false,
+    "error": "expected number less than or equal to 18446744073709551614, but number found in \"18446744073709551615\" exceeds it"
+   }
+  }
+ ],
+ "uv-whitespace": [
+  {
+   "input": {
+    "op": "version",
+    "s": "1.0 "
+   },
+   "packaging": {
+    "ok": true,
+    "value": "1.0"
+   },
+   "uv": {
+    "ok": false,
+    "error": "after parsing `1.0`, found ` `, which is not part of a valid version"
+   }
+  },
+  {
+   "input": {
+    "op": "version",
+    "s": " 1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": "1.0"
+   },
+   "uv": {
+    "ok": false,
+    "error": "expected version to start with a number, but no leading ASCII digits were found"
+   }
+  },
+  {
+   "input": {
+    "op": "version",
+    "s": "1.0 "
+   },
+   "packaging": {
+    "ok": true,
+    "value": "1.0"
+   },
+   "uv": {
+    "ok": false,
+    "error": "after parsing `1.0`, found ` `, which is not part of a valid version"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "\t1.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "    1.2rc",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  01  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  01+1.2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  01.2post2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  01a  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  01b",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  01dev",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  0dev",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  10",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  11.22",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  1pre",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  20",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "  2r2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": " 1.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0!1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0!1.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0-0101",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0-a",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0.1a",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0.9",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0.9.post1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0.cdev",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "00",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "00!2dev0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "001",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "001  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "001+postpost",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "001-b",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0010post",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0012.1.2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "001c0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01-a0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01-a1post-",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01.02",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01.2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01.2_dev12",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01.2b",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01.2pre.2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01.c2dev",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01.post",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "010",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0101.2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0101.21",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01011.2dev0  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0101a0+local",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0101dev-1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0101r",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "011.2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "011.20c",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "011.21-01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "011.21b",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "012",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0120b",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0122",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0122rdev_",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "012c",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "012cpost+1.2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "012pre_",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01_prer0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01a",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01a2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01b  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01c+b2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01c-",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01c0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01c01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01cr+0a",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01dev",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01dev  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01dev+local",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01dev+preb01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01post2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01pre",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01predev-",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01r",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01r1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "01rc-",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "02",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "02r",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "02rc011",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0_dev",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0a",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0a+c",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0ar",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0b",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0b.",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0c",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0c0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0dev",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0post",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0post1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0pre",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0prer.",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0r",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0r22+c",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0rc",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "0rc011",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1  ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1!0.5",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1!1.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1!1.220c",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1!2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1!2.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1+2",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1+local101",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1+post",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1-01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1-c+b",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1-post0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1-r0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0 ",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+1.01",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+ABC",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+a-b_c",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+a.b.c.d.e.f.g",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+abc.5",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+local",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0+other",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0-1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0-dev-3",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0-post-1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0-r",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0-r1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0-rc.1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.0+local",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.0.0.0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.0.0.1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.0.dev0+local",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.0a0",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.1",
+    "b": "1.0.18446744073709551615"
+   },
+   "packaging": {
+    "ok": true,
+    "value": -1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.18446744073709551615",
+    "b": "1.0.dev"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.18446744073709551615",
+    "b": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.18446744073709551615",
+    "b": "1.0.post"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.18446744073709551615",
+    "b": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.18446744073709551615",
+    "b": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "compare",
+    "a": "1.0.18446744073709551615",
+    "b": "1.0.r1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": 1
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  }
+ ],
+ "uv-arbitrary-equality": [
+  {
+   "input": {
+    "op": "spec",
+    "s": "===foobar"
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     "===foobar"
+    ]
+   },
+   "uv": {
+    "ok": false,
+    "error": "Failed to parse version: expected version to start with a number, but no leading ASCII digits were found:\n===foobar\n^^^^^^^^^\n"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version === \"3.12\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "Expected a valid marker operator (such as `>=` or `not in`), found `===`"
+   }
+  }
+ ],
+ "spelling": [
+  {
+   "input": {
+    "op": "spec",
+    "s": "==v1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     "==v1.0"
+    ]
+   },
+   "uv": {
+    "ok": true,
+    "value": [
+     "==1.0"
+    ]
+   }
+  }
+ ],
+ "empty-clause": [
+  {
+   "input": {
+    "op": "spec",
+    "s": ","
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     ""
+    ]
+   },
+   "uv": {
+    "ok": false,
+    "error": "Failed to parse version: Unexpected end of version specifier, expected operator:\n,\n\n"
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": ">=1.0,"
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     ">=1.0"
+    ]
+   },
+   "uv": {
+    "ok": false,
+    "error": "Failed to parse version: Unexpected end of version specifier, expected operator:\n>=1.0,\n      \n"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0,",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": false,
+    "error": "invalid"
+   }
+  }
+ ],
+ "uv-invalid-marker-ignored": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version == \"3.1*\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version ~= \"3\""
+   },
+   "packaging": {
+    "ok": false,
+    "error": "undefined comparison"
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version > 'abc'"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version == 'abc'"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version>=\"3.8.*\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version == \"3.12.*.*\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version ~= \"3.12.*\""
+   },
+   "packaging": {
+    "ok": false,
+    "error": "undefined comparison"
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  }
+ ],
+ "uv-release-only": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_full_version > \"3.12.4.dev0\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_full_version < \"3.12.4.post1\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_full_version == \"3.12.4+local\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version >= \"1!3.8\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  }
+ ],
+ "in-is-a-version-list": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version in \"3.12.4\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "uv": {
+    "ok": true,
+    "value": false
+   }
+  }
+ ],
+ "string-fallback": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release >= \"6.0\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release > \"6.8.0\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release < \"7\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release ~= \"6.8\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_version >= \"#45\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "uv": {
+    "ok": true,
+    "value": true
+   }
+  }
+ ]
+}

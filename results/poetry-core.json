@@ -1,0 +1,4896 @@
+{
+ "poetry-local-zeros": [
+  {
+   "input": {
+    "op": "version",
+    "s": "1.0+01"
+   },
+   "packaging": {
+    "ok": true,
+    "value": "1.0+1"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": "1.0+01"
+   }
+  },
+  {
+   "input": {
+    "op": "version",
+    "s": "1.0+1.01"
+   },
+   "packaging": {
+    "ok": true,
+    "value": "1.0+1.1"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": "1.0+1.01"
+   }
+  }
+ ],
+ "poetry-uppercase-tags": [
+  {
+   "input": {
+    "op": "version",
+    "s": "2.0.0-ALPHA-1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": "2.0.0a1"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": "2.0.0alpha1"
+   }
+  }
+ ],
+ "poetry-constraint-syntax": [
+  {
+   "input": {
+    "op": "spec",
+    "s": "~=1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": "<=1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": ">=1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": "==1.0.post1.*"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": ">1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": "==1.0rc1.*"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": "=1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": "~1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": null
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~=1",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "<=1.0+local",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">=1.0+local",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0.post1.*",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ">1.0+local",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "==1.0rc1.*",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "1.0",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "=1.0",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "~1.0",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": false,
+    "error": "invalid"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  }
+ ],
+ "poetry-arbitrary-equality": [
+  {
+   "input": {
+    "op": "spec",
+    "s": "===1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     "===1.0"
+    ]
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": "===foobar"
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     "===foobar"
+    ]
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===1.0",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "===foobar",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version === \"3.12\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  }
+ ],
+ "empty-clause": [
+  {
+   "input": {
+    "op": "spec",
+    "s": ""
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     ""
+    ]
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "spec",
+    "s": ","
+   },
+   "packaging": {
+    "ok": true,
+    "value": [
+     ""
+    ]
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": "",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "0.9"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.post1.dev1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0rc1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0+other"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.0+local"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.5.2"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.99"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "2.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "2.0a1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "2.0.dev0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1!1.0"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1!0.5"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "1.0.0.0.1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  },
+  {
+   "input": {
+    "op": "contains",
+    "spec": ",",
+    "v": "0.9.post1"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "ParseConstraintError"
+   }
+  }
+ ],
+ "poetry-invalid-marker": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version == \"3.1*\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version ~= \"3\""
+   },
+   "packaging": {
+    "ok": false,
+    "error": "undefined comparison"
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version > 'abc'"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version == 'abc'"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version>=\"3.8.*\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version == \"3.12.*.*\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  }
+ ],
+ "poetry-reversed-operands": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"3.8\" < python_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"3.13\" > python_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"3.12\" == python_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"linux\" == sys_platform"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"cpython\" == implementation_name"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"3.12\" != python_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "'3.0' <= python_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"3.13\" >= python_full_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": false,
+    "error": "InvalidMarkerError"
+   }
+  }
+ ],
+ "in-is-a-version-list": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"3.1\" in python_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "\"2\" in python_version"
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "python_version in \"3.12.4\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release in \"6.8.0-45-generic-extra\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release not in \"6.8\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  }
+ ],
+ "string-fallback": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release >= \"6.0\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release < \"7\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  },
+  {
+   "input": {
+    "op": "marker",
+    "m": "platform_release ~= \"6.8\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": false
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": true
+   }
+  }
+ ],
+ "poetry-implementation-version": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "implementation_version >= \"3.12\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  }
+ ],
+ "poetry-string-ordering": [
+  {
+   "input": {
+    "op": "marker",
+    "m": "os_name >= \"posix\""
+   },
+   "packaging": {
+    "ok": true,
+    "value": true
+   },
+   "poetry-core": {
+    "ok": true,
+    "value": false
+   }
+  }
+ ]
+}

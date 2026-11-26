@@ -1,0 +1,13 @@
+[package]
+name = "uv-target"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+# uv's own crates, from the checkout pinned in pins.json (run.sh fetches it into .cache/uv).
+[dependencies]
+uv-pep440 = { path = "../../.cache/uv/crates/uv-pep440" }
+uv-pep508 = { path = "../../.cache/uv/crates/uv-pep508" }
+serde_json = "1"
+
+[workspace]

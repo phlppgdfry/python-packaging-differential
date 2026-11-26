@@ -1,0 +1,59 @@
+name: differential
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays: also against the latest uv and poetry-core
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pinned:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: false
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Run against the pinned versions (fails on any unexplained difference)
+        run: ./run.sh
+      - name: Publish the report
+        if: always()
+        run: cat RESULTS.md >> "$GITHUB_STEP_SUMMARY"
+
+  latest:
+    # A new unexplained difference here means uv or poetry-core changed behaviour since the pins.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: false
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Move the pins to the latest releases and uv main
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request
+          def get(url):
+              with urllib.request.urlopen(url, timeout=30) as r:
+                  return json.load(r)
+          pins = json.load(open("pins.json"))
+          pins["uv"] = get("https://api.github.com/repos/astral-sh/uv/commits/main")["sha"]
+          pins["packaging"] = get("https://pypi.org/pypi/packaging/json")["info"]["version"]
+          pins["poetry-core"] = get("https://pypi.org/pypi/poetry-core/json")["info"]["version"]
+          json.dump(pins, open("pins.json", "w"), indent=2)
+          print(pins)
+          PY
+      - name: Run against the latest versions
+        run: ./run.sh
+      - name: Publish the report
+        if: always()
+        run: cat RESULTS.md >> "$GITHUB_STEP_SUMMARY"
